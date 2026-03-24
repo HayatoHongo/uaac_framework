@@ -2,6 +2,8 @@
 
 This is an implementation for each procedures in UAAC framework.
 
+In the development of the scripts in this repository, iterative consultation with ChatGPT (versions 4o, 5, 5 mini, 5.1, and 5.2; OpenAI) and Gemini (versions 2.5 Pro and 3 Pro; Google) was utilized to assist in generating the Python code. All AI-generated code was thoroughly reviewed, verified, and refined by the lead author. The lead author takes full responsibility for the integrity, accuracy, and intellectual property compliance of all code.
+
 ## Framework procedures
 
 1. Aerial imagery acquisition
