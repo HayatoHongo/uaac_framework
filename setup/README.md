@@ -125,6 +125,39 @@ python clustering/kmeans.py 6 --input DJI_20260409131514_0001_D.tif
 Expected output:
 - `segmented_output_kmeans_k_6.tif`
 
+## 5. Download private files from Hugging Face (Ubuntu 24.04)
+
+This environment blocks direct `pip install` to the system Python (`externally-managed-environment`).
+Use `pipx` + `hf` CLI instead.
+
+### 5.1 Install CLI
+
+```bash
+sudo apt-get update
+sudo apt-get install -y pipx
+pipx install huggingface_hub
+```
+
+### 5.2 Login with token
+
+```bash
+~/.local/bin/hf auth login
+```
+
+### 5.3 Download from private dataset
+
+```bash
+~/.local/bin/hf download \
+  --repo-type dataset \
+  HayatoHongo/uaac_framework \
+  Are1-2-75m.tif \
+  --local-dir .
+```
+
+Note:
+- `huggingface-cli` is deprecated; use `hf`.
+- Optional: run `pipx ensurepath` once, then open a new shell to use `hf` without full path.
+
 ## Troubleshooting
 
 - If `pip install -r requirements.txt` fails while building wheels (often `fiona`), ensure the OS packages above are installed.
