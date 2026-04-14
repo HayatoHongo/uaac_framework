@@ -54,7 +54,7 @@ docker build -t uaac_framework:py313 .
 Mount the repository directory into the container so outputs are written back to the host.
 
 ```bash
-docker run --rm \
+sudo docker run --rm \
   -v "$PWD":/work \
   -w /work \
   uaac_framework:py313 \
