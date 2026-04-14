@@ -53,7 +53,11 @@ def kmeans_segmentation(
         plt.imshow(preprocessed_image)
         plt.title("Preprocessed Image")
         plt.axis("off")
+        pre_vis_output_path = f"preprocessed_kmeans_k_{k}.png"
+        plt.savefig(pre_vis_output_path, dpi=200, bbox_inches="tight", pad_inches=0)
         plt.show()
+        plt.close()
+        print(f"preprocessed visualization saved: {pre_vis_output_path}")
 
     h, w, c = preprocessed_image.shape
     pixels = preprocessed_image.reshape(-1, c)
@@ -66,7 +70,10 @@ def kmeans_segmentation(
     plt.imshow(segmented, cmap="nipy_spectral")
     plt.title(f"KMeans Clustering Result (k={k})")
     plt.axis("off")
+    vis_output_path = f"segmented_output_kmeans_k_{k}.png"
+    plt.savefig(vis_output_path, dpi=200, bbox_inches="tight", pad_inches=0)
     plt.show()
+    plt.close()
 
     profile.update({"count": 1, "dtype": "uint8", "compress": "lzw"})
 
@@ -74,6 +81,7 @@ def kmeans_segmentation(
     with rasterio.open(output_path, "w", **profile) as dst:
         dst.write(segmented, 1)
     print(f"clustering result saved: {output_path}")
+    print(f"visualization saved: {vis_output_path}")
 
 
 if __name__ == "__main__":
