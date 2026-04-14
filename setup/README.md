@@ -15,6 +15,34 @@ cd uaac_framework
 
 ## 2. Option A (recommended): Docker
 
+### If Docker is not installed yet (Ubuntu 24.04)
+
+Use the following commands in this order:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y docker.io
+sudo systemctl enable --now docker
+sudo usermod -aG docker "$USER"
+```
+
+Then re-login (or apply group changes immediately in the current shell):
+
+```bash
+newgrp docker
+```
+
+Verify Docker works:
+
+```bash
+docker --version
+docker run --rm hello-world
+```
+
+Note:
+- On this environment, running `apt install docker` did not work.
+- `docker.io` from Ubuntu repositories was the valid package.
+
 ### Build the image
 
 ```bash
