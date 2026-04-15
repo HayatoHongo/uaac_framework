@@ -20,6 +20,8 @@ RUN apt-get update \
         pkg-config \
         gdal-bin \
         libgdal-dev \
+        libglib2.0-0 \
+        libgl1 \
         proj-bin \
         libproj-dev \
         libgeos-dev \
