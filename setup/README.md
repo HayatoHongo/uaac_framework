@@ -154,6 +154,12 @@ pipx install huggingface_hub
   --local-dir .
 ```
 
+or if you have already logged in;
+
+```bash
+hf download HayatoHongo/uaac_framework area_1_2_orthomosaic_masked.tif --repo-type dataset
+```
+
 Note:
 - `huggingface-cli` is deprecated; use `hf`.
 - Optional: run `pipx ensurepath` once, then open a new shell to use `hf` without full path.
