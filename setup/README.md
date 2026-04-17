@@ -157,7 +157,7 @@ pipx install huggingface_hub
 or if you have already logged in;
 
 ```bash
-hf download HayatoHongo/uaac_framework area_1_2_orthomosaic_masked.tif --repo-type dataset
+mkdir -p data && hf download HayatoHongo/uaac_framework area_1_2_orthomosaic_masked.tif --repo-type dataset --local-dir data
 ```
 
 Note:
